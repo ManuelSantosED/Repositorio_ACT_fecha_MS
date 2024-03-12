@@ -3,16 +3,33 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
+/**
+ * Fecha test
+ *
+ * @constructor Create empty Fecha test
+ */
 class FechaTest {
 
+    /**
+     * Set up
+     *
+     */
     @BeforeEach
     fun setUp() {
     }
 
+    /**
+     * Tear down
+     *
+     */
     @AfterEach
     fun tearDown() {
     }
 
+    /**
+     * Valida
+     *
+     */
     @Test
     fun valida() {
         val fecha = Fecha(15, 13, 2023)
@@ -21,12 +38,20 @@ class FechaTest {
     }
 
 
+    /**
+     * Fecha invalida dia
+     *
+     */
     @Test
     fun fechaInvalidaDia() {
         val fecha = Fecha(32, 5, 2022)
         assertFalse(fecha.valida())
     }
 
+    /**
+     * Fecha invalida mes
+     *
+     */
     @Test
     fun fechaInvalidaMes() {
         val fecha = Fecha(12, 13, 2021)
@@ -34,6 +59,10 @@ class FechaTest {
         assertFalse(fecha.valida())
     }
 
+    /**
+     * Fecha invalida febrero bisiesto
+     *
+     */
     @Test
     fun fechaInvalidaFebreroBisiesto() {
         val fecha = Fecha(29, 2, 2021)
@@ -42,6 +71,10 @@ class FechaTest {
         println(fecha.valida())
     }
 
+    /**
+     * Fecha valida febrero bisiesto
+     *
+     */
     @Test
     fun fechaValidaFebreroBisiesto() {
         val fecha = Fecha(29, 2, 2024)

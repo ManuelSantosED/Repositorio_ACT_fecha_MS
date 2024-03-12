@@ -1,6 +1,19 @@
+/**
+ * Fecha
+ *
+ * @property dias
+ * @property mes
+ * @property anio
+ * @constructor Create empty Fecha
+ */
 class Fecha(private val dias: Int, private val mes: Int, private val anio: Int) {
 
 
+    /**
+     * Valida
+     *
+     * @return
+     */
     fun valida(): Boolean {
 
         if (dias < 1 || dias > 31) return false
