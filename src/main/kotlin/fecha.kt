@@ -1,6 +1,6 @@
 /**
  * Fecha
- *
+ * @author
  * @property dia
  * @property mes
  * @property anio
@@ -9,6 +9,11 @@
 class Fecha(private val dia: Int, private val mes: Int, private val anio: Int) {
 
 
+    /**
+     * Valida
+     * La funcion validar, comprueba que el mes no tenga mas dias de los que les corresponden
+     * @return
+     */
     fun valida(): Boolean {
 
         var esValida = false
@@ -23,9 +28,20 @@ class Fecha(private val dia: Int, private val mes: Int, private val anio: Int) {
         return esValida
     } // … más métodos
 
+
+    /**
+     * esBisiesto
+     * Comprueba que el año es bisiesto segun la formula
+     * * @return
+     */
     private fun esBisiesto(anio: Int): Boolean = anio % 400 == 0 || anio % 4 == 0 && anio % 100 != 0
 
 
+    /**
+     * esBisiesto
+     * Asigna el numero de dias que tienen los meses
+     * @return
+     */
     private fun diasDelMes(mes: Int): Int {
         var diasMes = 0
         when (mes) {
